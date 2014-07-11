@@ -1,0 +1,16 @@
+{
+  "name": "munch",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sequelize": "^1.7.0",
+    "mysql": "^2.1.1",
+    "body-parser": "^1.4.3"
+  }
+}
