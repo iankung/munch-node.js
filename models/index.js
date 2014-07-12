@@ -13,7 +13,7 @@ var sequelize = new Sequelize(
 var models = [
     'user',
     'bookmark',
-    'follow',
+    'sub',
     'deal',
     'restaurant'
 ];
@@ -24,10 +24,25 @@ models.forEach(function(model) {
 
 //defining relationships, fill in with models
 (function(m) {
-    m.PhoneNumber.belongsTo(m.User);
-    m.Task.belongsTo(m.User);
-    m.User.hasMany(m.Task);
-    m.User.hasMany(m.PhoneNumber);
+
+    //belongs to
+    m.bookmark.belongsTo(m.user);
+    m.sub.belongsTo(m.user);
+    m.restaurant.belongsTo(m.user);
+
+    m.bookmark.belongsTo(m.deal);
+
+    m.deal.belongsTo(m.restaurant);
+    m.sub.belongsTo(m.restaurant);
+
+    //has manys
+    m.user.hasMany(m.bookmark);
+    m.user.hasMany(m.sub);
+    m.user.hasMany(m.restaurant);
+
+    m.restaurant.hasMany(m.deal);
+    m.restaurant.hasMany(m.sub);
+
 })(module.exports);
 
 
