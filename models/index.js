@@ -11,11 +11,11 @@ var sequelize = new Sequelize(
 );
 
 var models = [
-    'user',
-    'bookmark',
-    'sub',
-    'deal',
-    'restaurant'
+    'User',
+    'Bookmark',
+    'Sub',
+    'Deal',
+    'Restaurant'
 ];
 
 models.forEach(function(model) {
@@ -26,22 +26,22 @@ models.forEach(function(model) {
 (function(m) {
 
     //belongs to
-    m.bookmark.belongsTo(m.user);
-    m.sub.belongsTo(m.user);
-    m.restaurant.belongsTo(m.user);
+    m.Bookmark.belongsTo(m.User);
+    m.Sub.belongsTo(m.User);
+    m.Restaurant.belongsTo(m.User);
 
-    m.bookmark.belongsTo(m.deal);
+    m.Bookmark.belongsTo(m.Deal);
 
-    m.deal.belongsTo(m.restaurant);
-    m.sub.belongsTo(m.restaurant);
+    m.Deal.belongsTo(m.Restaurant);
+    m.Sub.belongsTo(m.Restaurant);
 
     //has manys
-    m.user.hasMany(m.bookmark);
-    m.user.hasMany(m.sub);
-    m.user.hasMany(m.restaurant);
+    m.User.hasMany(m.Bookmark);
+    m.User.hasMany(m.Sub);
+    m.User.hasMany(m.Restaurant);
 
-    m.restaurant.hasMany(m.deal);
-    m.restaurant.hasMany(m.sub);
+    m.Restaurant.hasMany(m.Deal);
+    m.Restaurant.hasMany(m.Sub);
 
 })(module.exports);
 
