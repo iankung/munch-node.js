@@ -9,6 +9,6 @@ module.exports = {
                        port    : 3306,
 
                    }
-        creditLimit: 600 // Default initial credit limit
+        //creditLimit: 600 // Default initial credit limit
     }
 }

@@ -1,8 +1,7 @@
 var Sequelize = require('sequelize');
 var config    = require('config').munchdb;
 
-//ordering of parameters matter, i think...check model.js for sequelize
-//initialization example
+//ordering of parameters matter
 var sequelize = new Sequelize(
     config.name,
     config.username,
