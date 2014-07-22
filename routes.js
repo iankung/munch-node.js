@@ -9,13 +9,16 @@ exports.init = function (app) {
     app.post('/auth', authHandler.generateToken);
     app.post('/user', authHandler.authorize, userHandler.addUser);
     //logout route here
-/*    
+
+
+    app.get('/allrestaurants', restaurantHandler.getAllRestaurants);
+
+/*
+
     app.get('/:restaurant', restaurantHandler.getRestaurantDetails);
     app.put('/:restaurant', restaurantHandler.editRestaurantDetails);
-    app.get('/allrestaurants', );
     app.put('/:user/:restaurant', ); //add or remove restaurant from feed
 
-    
     app.get('/:restaurant/:deal_id', dealHandler.getDeal);
     app.put('/:restaurant/:deal_id', dealHandler.editDeal);
 
