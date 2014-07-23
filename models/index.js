@@ -48,5 +48,3 @@ models.forEach(function(model) {
 // export connection
 module.exports.sequelize = sequelize;
 
-
-
