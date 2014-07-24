@@ -13,7 +13,13 @@ module.exports = function(sequelize, DataTypes) {
         website:     DataTypes.STRING,
         delivery:    DataTypes.BOOLEAN,
         on_off:      DataTypes.BOOLEAN,
-    }, {
+    }, 
+
+    {
+        freezeTableName: true,
+    },
+    
+    {
             instanceMethods: {
                 methodname: function() {
 

@@ -7,16 +7,20 @@ var authHandler       = require('./handlers/auth'),
 
 exports.init = function (app) {
     app.post('/auth', authHandler.generateToken);
-    app.post('/user', authHandler.authorize, userHandler.addUser);
-    //logout route here
+    //app.post('/user', authHandler.authorize, userHandler.addUser);
+    app.post('/createuser', userHandler.createUser);
 
 
-    app.get('/allrestaurants', restaurantHandler.getAllRestaurants);
+    //app.get('/allrestaurants', restaurantHandler.getAllRestaurants);
+
+/*
+    app.get('/:restaurant', restaurantHandler.getRestaurantDetails);
+*/
+    app.put('/:restaurant', restaurantHandler.editRestaurantDetails);
+    //see if put acts differently if already exists
 
 /*
 
-    app.get('/:restaurant', restaurantHandler.getRestaurantDetails);
-    app.put('/:restaurant', restaurantHandler.editRestaurantDetails);
     app.put('/:user/:restaurant', ); //add or remove restaurant from feed
 
     app.get('/:restaurant/:deal_id', dealHandler.getDeal);
@@ -34,9 +38,6 @@ exports.init = function (app) {
     app.get('/:user/bookmarks');
 */
     
-
-    
-//question: do i need to do :restauraunt w/ colon if ill requrest it later
 
 
 };

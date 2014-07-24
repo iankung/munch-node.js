@@ -11,8 +11,7 @@ var bodyParser = require('body-parser');
 
 //var db         = require('./models');
 //don't use require('./models') can cause multi connection to db
-//
-//
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
@@ -30,9 +29,9 @@ app.use(express.json())
 routes.init(app);
 
 
-app.get('models')
+app.get('models')  //'models' defined within express app instance, see top
     .sequelize
-    .sync({force: true})
+    .sync()   //if sync force = true, then it will overwrite and delete
     .complete(function(err){
         if(err){
             throw err[0]

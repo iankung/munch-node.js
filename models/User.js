@@ -3,12 +3,18 @@ module.exports = function(sequelize, DataTypes) {
         email: DataTypes.STRING,
         password: DataTypes.STRING,
         token: DataTypes.STRING,
-    }, {
-            instanceMethods: {
-                methodname: function() {
+    },
 
-                }
+    {
+        freezeTableName: true,
+    },    
+
+    {
+        instanceMethods: {
+            methodname: function() {
+
             }
-       });
+        }
+    });
 };
 

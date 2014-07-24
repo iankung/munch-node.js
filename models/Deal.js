@@ -7,7 +7,14 @@ module.exports = function(sequelize, DataTypes) {
         end_day:        DataTypes.STRING,
         end_time:       DataTypes.STRING,
         photo:          DataTypes.STRING,
-    }, {
+    }, 
+
+    {
+        freezeTableName: true,
+    },
+
+
+    {
             instanceMethods: {
                 methodname: function() {
 
