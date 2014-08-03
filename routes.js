@@ -5,17 +5,24 @@ var authHandler       = require('./handlers/auth'),
     aboutHandler      = require('./handlers/about'),
     feedbackHandler   = require('./handlers/feedback')
 
-exports.init = function (app) {
-    app.post('/auth', authHandler.generateToken);
-    //app.post('/user', authHandler.authorize, userHandler.addUser);
-    app.post('/createuser', userHandler.createUser);
+exports.init = function (app,router) {
+   /*  
+    router.route('/auth')
+        .get(authHandler.generateToken)
 
+    router.route('/user')
+        .post(userHandler.createUser)
+ 
+    router.route('/allrestaurants')
+        .get(restaurantHandler.getAllRestaurants)
 
-    //app.get('/allrestaurants', restaurantHandler.getAllRestaurants);
+    router.route('/:restaurant')
+        .get(restaurantHandler.getRestaurantDetails);
+
 
 /*
     app.get('/:restaurant', restaurantHandler.getRestaurantDetails);
-*/
+
     app.put('/:restaurant', restaurantHandler.editRestaurantDetails);
     //see if put acts differently if already exists
 
@@ -30,8 +37,13 @@ exports.init = function (app) {
     app.get('/:user/dealfeed', dealHandler.getDealFeed);
 */
 
-    app.get('/about', aboutHandler.getAboutAddress);
-    app.get('/feedback', feedbackHandler.getFeedbackAddress);
+    router.route('/about')
+        .get(aboutHandler.getAboutAddress);
+
+    router.route('/feedback')
+        .get(feedbackHandler.getFeedbackAddress);
+
+
 
 /*
     app.put('/:user/:deal_id', ); //add or remove deal from bookmarks

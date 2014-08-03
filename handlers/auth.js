@@ -10,7 +10,9 @@ exports.generateToken = function (req, res) {
     password = req.body.password
     
     if(email === 'foo' && password === 'bar'){
-        res.send(200, {'token': "ABC123"});
+        
+        res.json({message: "www.munch.com/about"});
+        //res.send(200, {'token': "ABC123"});
     }
     else{
         res.send(401, {'message': 'Unauthorised'});

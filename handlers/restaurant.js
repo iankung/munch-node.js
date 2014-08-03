@@ -15,4 +15,9 @@ exports.getAllRestaurants = function (req, res) {
     
 };
 
+//create a unique restaurant (primary key ensures unique)
+exports.createRestaurant = function (req, res) {
+    
 
+
+};

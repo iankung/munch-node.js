@@ -1,5 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
     return sequelize.define('Restaurant', {
+        id  :        {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+        },
         name:        DataTypes.STRING,
         address:     DataTypes.STRING,
         coordinates: DataTypes.STRING,
