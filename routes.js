@@ -3,11 +3,11 @@ var authHandler       = require('./handlers/auth'),
     restaurantHandler = require('./handlers/restaurant'),
     dealHandler       = require('./handlers/deal'),
     aboutHandler      = require('./handlers/about'),
-    feedbackHandler   = require('./handlers/feedback')
+    feedbackHandler   = require('./handlers/feedback'),
+    managerHandler    = require('./handlers/manager')
 
 exports.init = function (app,router) {
 
-   /*  
     router.route('/auth')
         .get(authHandler.generateToken)
 
@@ -17,6 +17,7 @@ exports.init = function (app,router) {
     router.route('/allrestaurants')
         .get(restaurantHandler.getAllRestaurants)
 
+/*
     router.route('/:restaurant')
         .get(restaurantHandler.getRestaurantDetails);
 

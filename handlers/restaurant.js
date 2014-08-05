@@ -7,7 +7,14 @@ Restaurant = models.Restaurant;
 
 //returns all restaurant names in database
 exports.getAllRestaurants = function (req, res) {
-    
+    Restaurant.findAll({attributes: ['name', ]})
+        .complete(function(err,restaurant) {     //error comes first
+            if (!!err) {
+                res.json(401, {'message': 'error'});
+            } else {
+                res.json(restaurant);
+            }
+        })
 };
 
 //create a unique restaurant (primary key ensures unique)
