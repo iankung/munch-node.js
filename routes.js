@@ -6,6 +6,7 @@ var authHandler       = require('./handlers/auth'),
     feedbackHandler   = require('./handlers/feedback')
 
 exports.init = function (app,router) {
+
    /*  
     router.route('/auth')
         .get(authHandler.generateToken)
@@ -19,6 +20,10 @@ exports.init = function (app,router) {
     router.route('/:restaurant')
         .get(restaurantHandler.getRestaurantDetails);
 
+*/
+
+    router.route('/createrestaurant')
+        .post(restaurantHandler.createRestaurant);
 
 /*
     app.get('/:restaurant', restaurantHandler.getRestaurantDetails);
