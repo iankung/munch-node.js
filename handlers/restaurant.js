@@ -18,12 +18,12 @@ exports.createRestaurant = function (req, res) {
         city:            req.body.city,
         street_address:  req.body.streetaddress,
         coordinates:     req.body.coordinates,
-        phone:           req.body.string,
-        hours:           req.body.string,
-        type:            req.body.string,
-        activation_code: req.body.string,
-        website:         req.body.string,
-        delivery:        req.body.boolean,
+        phone:           req.body.phone,
+        hours:           req.body.hours,
+        type:            req.body.type,
+        activation_code: req.body.activationcode,
+        website:         req.body.website,
+        delivery:        req.body.delivery,
         on_off:          req.body.boolean,
     })
     
