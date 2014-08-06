@@ -16,7 +16,7 @@ exports.createUser = function (req, res) {
         .save()
         .complete(function(err) {
             if (!!err) {
-                res.send(401, {'message': 'error'});
+                res.status(401).json( {'message': 'error'});
             } else {
                 res.send(200, {'message': 'success'});
             }

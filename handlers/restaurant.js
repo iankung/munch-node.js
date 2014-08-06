@@ -12,7 +12,7 @@ exports.getAllRestaurants = function (req, res) {
             if (!!err) {
                 res.json(401, {'message': 'error'});
             } else {
-                res.json(restaurant);
+                res.status(200).json(restaurant);
             }
         })
 };
@@ -23,15 +23,15 @@ exports.createRestaurant = function (req, res) {
         name:            req.body.name,
         state:           req.body.state,
         city:            req.body.city,
-        street_address:  req.body.streetaddress,
+        street_address:  req.body.street_address,
         coordinates:     req.body.coordinates,
         phone:           req.body.phone,
         hours:           req.body.hours,
         type:            req.body.type,
-        activation_code: req.body.activationcode,
+        activation_code: req.body.activation_code,
         website:         req.body.website,
         delivery:        req.body.delivery,
-        on_off:          req.body.boolean,
+        on_off:          req.body.on_off,
     })
     
     restaurant

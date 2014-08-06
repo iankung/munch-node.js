@@ -7,19 +7,20 @@ module.exports = function(sequelize, DataTypes) {
         },
         name:{       
                      type: DataTypes.STRING,
-                     primaryKey: true,
+                     unique: 'compositeIndex',
         },
         state:{      
                      type: DataTypes.STRING,
-                     primaryKey: true,
+                     unique: 'compositeIndex',
+                     
         },
         city:{
                      type: DataTypes.STRING,
-                     primaryKey: true,
+                     unique: 'compositeIndex',
         },
         street_address:{
                      type: DataTypes.STRING,
-                     primaryKey: true,
+                     unique: 'compositeIndex',
         },
 
         coordinates:     DataTypes.STRING,
